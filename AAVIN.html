@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Aavin Clone</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+<style>
+    body{
+margin:0;
+font-family:Arial,Helvetica,sans-serif;
+background:#f4f4f4;
+}
+
+.top-bar{
+background:#f8f8f8;
+padding:8px;
+font-size:14px;
+}
+
+.top-bar a{
+text-decoration:none;
+color:#003366;
+margin-right:10px;
+}
+
+.social-links{
+display:flex;
+flex-wrap:wrap;
+gap:10px;
+align-items:center;
+}
+
+.social-links a{
+text-decoration:none;
+color:#003366;
+font-weight:600;
+}
+
+.header{
+background:white;
+padding:20px 0;
+}
+
+.logo{
+width:180px;
+}
+
+.profile{
+width:90px;
+border-radius:5px;
+}
+
+.header h2{
+font-size:28px;
+color:#234d92;
+font-weight:bold;
+margin-top:15px;
+}
+
+.navbar{
+background:#244d9d !important;
+}
+
+.navbar-nav .nav-link{
+color:white !important;
+padding:15px;
+}
+
+.navbar-nav .nav-link:hover{
+background:white;
+color:#244d9d !important;
+border-radius:5px;
+}
+
+.news{
+display:flex;
+align-items:center;
+background:white;
+}
+
+.news span{
+background:#b00020;
+color:white;
+padding:10px 20px;
+font-weight:bold;
+}
+
+.news marquee{
+padding:10px;
+color:#234d92;
+font-weight:bold;
+}
+
+.carousel img{
+height:550px;
+object-fit:cover;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#f5f5f5;
+}
+
+.products{
+width:95%;
+margin:auto;
+padding:20px 0;
+}
+
+.products h2{
+background:#294f98;
+color:white;
+text-align:center;
+padding:10px;
+font-size:30px;
+margin-bottom:20px;
+}
+
+.product-grid{
+
+display:grid;
+grid-template-columns:repeat(4, minmax(0, 1fr));
+gap:20px;
+}
+
+@media (max-width: 992px){
+.product-grid{
+grid-template-columns:repeat(3, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 768px){
+.product-grid{
+grid-template-columns:repeat(2, minmax(0, 1fr));
+}
+}
+
+@media (max-width: 480px){
+.product-grid{
+grid-template-columns:1fr;
+}
+}
+
+.card{
+
+background:white;
+border:1px solid #888;
+box-shadow:0 2px 8px rgba(0,0,0,.2);
+transition:.4s;
+overflow:hidden;
+
+}
+
+.card:hover{
+
+transform:translateY(-8px);
+
+}
+
+.card img{
+
+width:100%;
+height:220px;
+object-fit:contain;
+padding:15px;
+
+}
+
+.card h3{
+
+background:#8d8d8d;
+color:#bde3ff;
+padding:10px;
+text-align:center;
+font-size:22px;
+
+}
+
+.food-quality-link{
+text-align:center;
+margin:25px 0 10px;
+}
+
+.food-quality-link a{
+background:#294f98;
+color:white;
+padding:12px 20px;
+border-radius:6px;
+text-decoration:none;
+display:inline-block;
+font-weight:bold;
+}
+
+.food-quality-link a:hover{
+background:#1f3d78;
+}
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#fff;
+}
+
+/* Quick Links */
+
+.quick-links{
+
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:60px;
+
+padding:20px;
+
+}
+
+.item{
+
+text-align:center;
+
+}
+
+.item img{
+
+width:130px;
+height:130px;
+border-radius:50%;
+border:2px solid #5aa2df;
+padding:5px;
+object-fit:contain;
+transition:.4s;
+
+}
+
+.item img:hover{
+
+transform:scale(1.08);
+
+}
+
+.item a{
+
+display:block;
+margin-top:12px;
+font-size:28px;
+color:#2f67b2;
+text-decoration:underline;
+
+}
+
+
+/* Footer */
+
+footer{
+
+background:#162750;
+color:white;
+
+}
+
+.footer-container{
+
+display:flex;
+justify-content:space-around;
+flex-wrap:wrap;
+padding:40px 60px;
+
+}
+
+.footer-box{
+
+width:320px;
+margin-bottom:20px;
+
+}
+
+.footer-box h2{
+
+margin-bottom:20px;
+font-size:30px;
+text-align:center;
+
+}
+
+.footer-box p{
+
+margin:15px 0;
+font-size:22px;
+
+}
+
+.footer-box i{
+
+margin-right:10px;
+
+}
+
+.footer-box ul{
+
+list-style:none;
+
+}
+
+.footer-box ul li{
+
+margin:18px 0;
+
+}
+
+.footer-box ul li a{
+
+color:white;
+text-decoration:none;
+font-size:22px;
+
+}
+
+.footer-box ul li a:hover{
+
+text-decoration:underline;
+
+}
+
+
+/* Bottom Footer */
+
+.bottom-footer{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+padding:15px 25px;
+
+border-top:1px solid rgba(255,255,255,.3);
+
+font-size:18px;
+
+}
+
+.bottom-footer a{
+
+color:white;
+text-decoration:none;
+
+}
+
+.bottom-footer a:hover{
+
+text-decoration:underline;
+
+}
+
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.footer-container{
+
+flex-direction:column;
+align-items:center;
+
+}
+
+.bottom-footer{
+
+flex-direction:column;
+text-align:center;
+gap:10px;
+
+}
+
+.quick-links{
+
+gap:30px;
+
+}
+
+.item img{
+
+width:100px;
+height:100px;
+
+}
+
+.item a{
+
+font-size:18px;
+
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<!-- Top Bar -->
+
+<div class="top-bar">
+
+<div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+
+<div>
+<a href="#">தமிழ்</a>
+|
+<a href="#">A-</a>
+<a href="#">A</a>
+<a href="#">A+</a>
+</div>
+
+<div class="social-links">
+<a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
+<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
+<a href="https://wa.me/" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
+</div>
+
+</div>
+
+</div>
+
+<!-- Header -->
+
+<header class="header">
+
+<div class="container">
+
+<div class="row align-items-center">
+
+<div class="col-md-3 text-center">
+
+<img src="CM_Vijay_2026.png" class="profile">
+
+<h6>Thiru C. Joseph Vijay</h6>
+
+<p>Hon'ble Chief Minister</p>
+
+</div>
+
+<div class="col-md-6 text-center">
+
+<img src="AVIN.png" class="logo">
+
+<h2>TAMILNADU CO-OPERATIVE MILK PRODUCERS' FEDERATION LIMITED</h2>
+
+</div>
+
+<div class="col-md-3 text-center">
+
+<img src="Minister_Vijayalakshmi.jpg" class="profile">
+
+<h6>Tmt C. Vijayalakshmi</h6>
+
+<p>Minister for Milk & Dairy</p>
+
+</div>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- Navbar -->
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+
+<div class="container">
+
+<button class="navbar-toggler"
+type="button"
+data-bs-toggle="collapse"
+data-bs-target="#menu">
+
+<span class="navbar-toggler-icon"></span>
+
+</button>
+
+<div class="collapse navbar-collapse" id="menu">
+
+<ul class="navbar-nav mx-auto">
+
+<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Federation</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Unions</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Milk</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Tenders</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
+
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+</nav>
+
+<!-- News -->
+
+<div class="news">
+
+<span>Latest News</span>
+
+<marquee>
+
+Employee PF uploaded | Family Security Fund | Salem Aavin Market
+
+</marquee>
+
+</div>
+
+<!-- Slider -->
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+
+<div class="carousel-inner">
+
+<div class="carousel-item active">
+
+<img src="https://aavin.tn.gov.in/documents/20142/621496/icecram2.jpg/cb22b351-6d53-0091-e332-68ab7c83d1c8?t=1767680270645" class="d-block w-100">
+
+</div>
+
+<div class="carousel-item">
+
+<img src="https://aavin.tn.gov.in/documents/20142/621496/milkshake.jpg/3ae1da3f-5618-f85f-8fd9-7a0a389f27d1?t=1767680383685" class="d-block w-100">
+
+</div>
+
+<div class="carousel-item">
+
+<img src="https://aavin.tn.gov.in/documents/20142/621496/cookies.jpg/63aa5274-eac8-ef99-6d5e-d8b50dd41a35?t=1767680479250" class="d-block w-100">
+
+</div>
+
+</div>
+
+<button class="carousel-control-prev"
+type="button"
+data-bs-target="#carouselExample"
+data-bs-slide="prev">
+
+<span class="carousel-control-prev-icon"></span>
+
+</button>
+
+<button class="carousel-control-next"
+type="button"
+data-bs-target="#carouselExample"
+data-bs-slide="next">
+
+<span class="carousel-control-next-icon"></span>
+
+</button>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<section class="products">
+
+<h2>REVEAL OUR PRODUCTS</h2>
+
+<div class="product-grid">
+
+<div class="card">
+<a href="product-details.html" style="text-decoration:none; color:inherit; display:block;">
+<img src="https://aavin.tn.gov.in/documents/20142/41552/Delite-milk_Home-Page_.jpg/5b60d82e-fec7-41c6-914a-b081c1236dd6?t=1701950648653" alt="Aavin Delite">
+<h3>Aavin Delite</h3>
+</a>
+</div>
+
+<div class="card">
+<a href="milk-peda-details.html" style="text-decoration:none; color:inherit; display:block;">
+<img src="https://aavin.tn.gov.in/documents/20142/283405/Milk-Peda.jpg/ddff460b-da99-7ee5-9239-2e56446a849e?t=1702383043084" alt="Milk Peda">
+<h3>Milk Peda</h3>
+</a>
+</div>
+
+<div class="card">
+<a href="premium-curd-details.html" style="text-decoration:none; color:inherit; display:block;">
+<img src="https://aavin.tn.gov.in/documents/20142/283405/Curd.jpg/c502dd9d-bc67-5178-9d78-950a0e2f714b?t=1702031283461" alt="Premium Curd">
+<h3>Premium Curd</h3>
+</a>
+</div>
+
+<div class="card">
+<a href="mysorepa-details.html" style="text-decoration:none; color:inherit; display:block;">
+<img src="https://aavin.tn.gov.in/documents/20142/283405/Mysorepa.jpg/cde8753d-f6b6-4a89-237d-a3c9d4abdfb1?t=1702116232059" alt="Mysorepa">
+<h3>Mysorepa</h3>
+</a>
+</div>
+
+<div class="card">
+    <a href="ball-ice-cream-details.html" style="text-decoration:none; color:inherit; display:block;">
+        <img src="https://aavin.tn.gov.in/documents/20142/283405/Ball_Website-Images_.jpg/da160cd8-b713-9886-cf93-ac82f4aade62?t=1694845024726" alt="Ball Ice Cream">
+        <h3>Ball Ice Cream</h3>
+    </a>
+</div>
+
+<div class="card">
+    <a href="milk-cake-details.html" style="text-decoration:none; color:inherit; display:block;">
+        <img src="https://aavin.tn.gov.in/documents/20142/283405/Milk-Cake.jpg/332e44ef-7d02-c8e3-c4a1-e2dde6160959?t=1702031235773" alt="Milk Cake">
+        <h3>Milk Cake</h3>
+    </a>
+</div>
+
+<div class="card">
+    <a href="butter-milk-details.html" style="text-decoration:none; color:inherit; display:block;">
+        <img src="https://aavin.tn.gov.in/documents/20142/283405/Butter-Milk-+%281%29.jpg/d88a4363-d5f0-3cad-83e1-2e7bf23c4c72?t=1702097897082" alt="Butter Milk">
+        <h3>Butter Milk</h3>
+    </a>
+</div>
+
+<div class="card">
+    <a href="bar-ice-cream-details.html" style="text-decoration:none; color:inherit; display:block;">
+        <img src="https://aavin.tn.gov.in/documents/20142/283405/Bar-Ice-Cream.jpg/8b31e3b6-01e9-acbf-7e59-6922a4e22726?t=1702116191528" alt="Bar Ice Cream">
+        <h3>Bar Ice Cream</h3>
+    </a>
+</div>
+
+<div class="card">
+    <a href="chocolate-details.html" style="text-decoration:none; color:inherit; display:block;">
+        <img src="https://aavin.tn.gov.in/documents/20142/283405/Choclate.jpg/ae459155-4688-ad94-41a3-c17a8ffdfb70?t=1702116248779" alt="Chocolate">
+        <h3>Chocolate</h3>
+    </a>
+</div>
+
+<div class="card">
+    <a href="khova-details.html" style="text-decoration:none; color:inherit; display:block;">
+        <img src="https://aavin.tn.gov.in/documents/20142/283405/Khova.jpg/47524294-94a3-ff9d-0a5e-dd958417a07e?t=1702097427760" alt="Khova">
+        <h3>Khova</h3>
+    </a>
+</div>
+
+<div class="card">
+    <a href="yoghurt-drink-details.html" style="text-decoration:none; color:inherit; display:block;">
+        <img src="https://aavin.tn.gov.in/documents/20142/283405/Strawberry.jpg/19c4e52b-8253-1f44-11c2-c22533cca8a6?t=1702097739065" alt="Yoghurt Drink">
+        <h3>Yoghurt Drink</h3>
+    </a>
+</div>
+
+<div class="card">
+    <a href="paneer-details.html" style="text-decoration:none; color:inherit; display:block;">
+        <img src="https://aavin.tn.gov.in/documents/20142/283405/Paneer.jpg/7956a938-3a58-67de-5629-512606c5cfc1?t=1702382998796" alt="Paneer">
+        <h3>Paneer</h3>
+    </a>
+</div>
+
+</div>
+
+<div class="food-quality-link">
+<a href="https://www.fssai.gov.in/" target="_blank" rel="noopener noreferrer">Food Quality Available</a>
+</div>
+
+</section>
+<!-- Quick Links -->
+
+<section class="quick-links">
+
+<div class="item">
+<img src="https://aavin.tn.gov.in/documents/20142/282456/milk.jpg/6a5b98dd-317a-f196-c4e1-e1c1ba1ae971?t=1720609138163">
+<a href="#">Know Your Milk</a>
+</div>
+
+<div class="item">
+<img src="https://aavin.tn.gov.in/documents/20142/0/Milk+Card+Icon.png/4db74c78-48e5-5cbf-eff4-e561929e4193?t=1671019407098">
+<a href="#">Online Milk Card</a>
+</div>
+
+<div class="item">
+<img src="https://aavin.tn.gov.in/documents/20142/0/Parlour+Icon.png/f9f80bb6-02e1-a2f9-04f7-935a013461f8?t=1671018916532">
+<a href="#">Our Parlours</a>
+</div>
+
+<div class="item">
+<img src="https://aavin.tn.gov.in/documents/20142/0/Zonal+Office+Icon+%282%29.png/45eb255e-6fea-dc90-52bc-ba2963a98490?t=1671018641575">
+<a href="#">Zone Address</a>
+</div>
+
+<div class="item">
+<img src="https://aavin.tn.gov.in/documents/20142/282456/pro_Round_Icon.png/">
+<a href="#">Product Price List</a>
+</div>
+
+</section>
+
+
+<!-- Footer -->
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h2>ADDRESS</h2>
+
+<p>TCMPF Ltd., Aavin Illam,</p>
+
+<p>3A, Pasumpon Muthuramalinganar Salai,</p>
+
+<p>Nandanam, Chennai - 600 035</p>
+
+</div>
+
+
+<div class="footer-box">
+
+<h2>CONTACT US</h2>
+
+<p><i class="fa-solid fa-phone"></i> 1800 425 3300</p>
+
+<p><i class="fa-solid fa-envelope"></i>
+aavincomplaints@aavin.tn.gov.in
+</p>
+
+</div>
+
+
+<div class="footer-box">
+
+<h2>IMPORTANT LINKS</h2>
+
+<ul>
+
+<li><a href="#">Terms and Conditions</a></li>
+
+<li><a href="#">Privacy Policy</a></li>
+
+<li><a href="#">Hyper Linking Policy</a></li>
+
+<li><a href="#">Copyright Policy</a></li>
+
+<li><a href="#">Disclaimer</a></li>
+
+</ul>
+
+</div>
+
+</div>
+
+
+<div class="bottom-footer">
+
+<div>
+
+<a href="#">FAQ</a> |
+
+<a href="#">News</a> |
+
+<a href="#">Contact Us</a> |
+
+Content Managed & Owned by TCMPF
+
+</div>
+
+<div>
+
+Powered By CMS Computers Ltd.
+
+</div>
+
+</div>
+
+</footer>
+
+</body>
+</html>
