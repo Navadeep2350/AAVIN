@@ -1,798 +1,944 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Aavin Clone</title>
-
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-
-<link rel="stylesheet" href="style.css">
-<style>
-    body{
-margin:0;
-font-family:Arial,Helvetica,sans-serif;
-background:#f4f4f4;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        nav {
+            background-color: lightblue;
+            width: 100%;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 100px;
+            width: 100%;
+            border-radius: 10px;
+            height: 70px;
+            margin: 0 auto;
+        }
+        .logo img {
+            display: block;
+                border-radius: 50%;
+                width: 80px;
+                height: 80px;
+        }
+        .nav-links li {
+            position: relative;
+        }
+        .nav-links a {
+            display: block;
+            color: black;
+            text-align: center;
+            padding: 10px 15px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+        .nav-links a:hover,
+        .dropdown > a:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+            border-radius: 8px;
+        }
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            align-items: center;
+            gap: 35px;
+            font-size: 18px;
+        }
+        .dropdown {
+            position: relative;
+        }
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 110%;
+            left: 0;
+            background-color: white;
+            border-radius: 8px;
+            min-width: 200px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.15);
+            z-index: 1;
+        }
+        .dropdown-content li {
+            list-style-type: none;
+            width: 100%;
+        }
+        .dropdown-content a {
+            color: black;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            text-align: left;
+        }
+        .dropdown:hover > .dropdown-content {
+            display: block;
+        }
+        .dropdown-content a:hover {
+            background-color: #f2f2f2;
+        }
+    
+        marquee {
+            margin-top: 20px;
+            font-size: 24px;
+            color: green;
+             background-color: lightblue;
+             padding: 10px;
+             border-radius: 20px;
+        }
+        marquee p {
+            margin: 0;
+            font-family:arial, sans-serif;
+        }
+        
+        .homebanner img {
+            border-radius: 20px;
+            width: 100%;
+            height: 630px;
+            object-fit: cover;
+        }
+        .homebanner h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color:red;
+            font-size: 48px;
+            text-align: center;
+        }
+        .homebanner p {
+            position: absolute;
+            top: 65%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color:rgb(from color r g b);
+            font-size: 24px;
+            text-align: center;
+        }
+        .homebanner button {
+            position: absolute;
+            top: 75%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: indigo;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        .banner {
+            position: relative;
+            margin: 40px auto;
+            max-width: 1200px;
+            border-radius: 20px;
+            overflow: hidden;
+        }
+        .banner img {
+            display: block;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        .banner-content {
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            transform: translateY(-50%);
+            max-width: 500px;
+            color: white;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 18px;
+        }
+        .banner-content p {
+            margin: 20px 0 0;
+            line-height: 1.6;
+            font-size: 18px;
+        }
+        .banner-content button {
+            margin-top: 20px;
+            padding: 14px 24px;
+            font-size: 16px;
+            background-color: indigo;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+       .partnership {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .partners {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .partners img {
+            width: 180px;
+            height: 120px;
+            border-radius: 8px;
+        }
+            section {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+                margin-top: 40px;
+            }
+            section div {
+                    text-align: center;
+                }
+            section img {
+                    width: 300px;
+                    height: 200px;
+                    border-radius: 20px;
+                }
+               
+                
+            section div button {
+                    margin-top: 10px;
+                    padding: 10px 20px;
+                    font-size: 16px;
+                    background-color: indigo;
+                    color: white;
+                    border: none;
+                    border-radius: 8px;
+                    cursor: pointer;
+                }
+                section div h1 {
+                    margin-top: 15px;
+                    font-size: 20px;
+                }
+                section div{
+                    background-color: yellowgreen;
+                    padding: 20px;
+                    border-radius: 20px;
+                }
+                
+              .profile {
+    margin-top: 50px;
+    padding: 20px;
 }
 
-.top-bar{
-background:#f8f8f8;
-padding:8px;
-font-size:14px;
+.profile h2 {
+    text-align: center;
+    margin-bottom: 30px;
 }
 
-.top-bar a{
-text-decoration:none;
-color:#003366;
-margin-right:10px;
+.carousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
 }
 
-.social-links{
-display:flex;
-flex-wrap:wrap;
-gap:10px;
-align-items:center;
+.carousel-wrapper {
+    width: 1050px;
+    overflow: hidden;
 }
 
-.social-links a{
-text-decoration:none;
-color:#003366;
-font-weight:600;
+.carousel-track {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
 }
 
-.header{
-background:white;
-padding:20px 0;
+.team-member {
+    min-width: 336px;
+    background: #f5fff5;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
 }
 
-.logo{
-width:180px;
+.team-member img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 12px;
 }
 
-.profile{
-width:90px;
-border-radius:5px;
+.team-member h3 {
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 
-.header h2{
-font-size:28px;
-color:#234d92;
-font-weight:bold;
-margin-top:15px;
+.team-member p {
+    color: #555;
 }
 
-.navbar{
-background:#244d9d !important;
+.carousel-btn {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background: white;
+    cursor: pointer;
+    font-size: 22px;
 }
 
-.navbar-nav .nav-link{
-color:white !important;
-padding:15px;
+.carousel-btn:hover {
+    background: #f0f0f0;
 }
 
-.navbar-nav .nav-link:hover{
-background:white;
-color:#244d9d !important;
-border-radius:5px;
+.dots {
+    text-align: center;
+    margin-top: 20px;
 }
 
-.news{
-display:flex;
-align-items:center;
-background:white;
+.dot {
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background: #b7f5b7;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
 }
 
-.news span{
-background:#b00020;
-color:white;
-padding:10px 20px;
-font-weight:bold;
+.dot.active {
+    background: green;
 }
 
-.news marquee{
-padding:10px;
-color:#234d92;
-font-weight:bold;
+.view-btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    background: indigo;
+    color: white;
+    cursor: pointer;
 }
-
-.carousel img{
-height:550px;
-object-fit:cover;
-}
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
+body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="number"],
+        input[type="password"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+        input[type="submit"],
+        input[type="reset"] {
+            background-color:    #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover,
+        input[type="reset"]:hover {
+            background-color: #a04577;
+        }
+        .location-section {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 30px;
+            margin: 40px auto;
+            padding: 0 20px;
+            max-width: 1200px;
+        }
+        .location-map {
+            flex: 1.2;
+        }
+        .location-map iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            border-radius: 12px;
+        }
+        .location-form {
+            flex: 0.8;
+            background: #f7f7f7;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        .location-form form {
+            margin: 0;
+            max-width: none;
+        }
+        .location-form .button-row {
+            display: flex;
+            gap: 10px;
+        }
+        *{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
 }
 
 body{
-background:#f5f5f5;
+    background:#f4f4f4;
 }
 
-.products{
-width:95%;
-margin:auto;
-padding:20px 0;
-}
-
-.products h2{
-background:#294f98;
-color:white;
-text-align:center;
-padding:10px;
-font-size:30px;
-margin-bottom:20px;
-}
-
-.product-grid{
-
-display:grid;
-grid-template-columns:repeat(4, minmax(0, 1fr));
-gap:20px;
-}
-
-@media (max-width: 992px){
-.product-grid{
-grid-template-columns:repeat(3, minmax(0, 1fr));
-}
-}
-
-@media (max-width: 768px){
-.product-grid{
-grid-template-columns:repeat(2, minmax(0, 1fr));
-}
-}
-
-@media (max-width: 480px){
-.product-grid{
-grid-template-columns:1fr;
-}
-}
-
-.card{
-
-background:white;
-border:1px solid #888;
-box-shadow:0 2px 8px rgba(0,0,0,.2);
-transition:.4s;
-overflow:hidden;
-
-}
-
-.card:hover{
-
-transform:translateY(-8px);
-
-}
-
-.card img{
-
-width:100%;
-height:220px;
-object-fit:contain;
-padding:15px;
-
-}
-
-.card h3{
-
-background:#8d8d8d;
-color:#bde3ff;
-padding:10px;
-text-align:center;
-font-size:22px;
-
-}
-
-.food-quality-link{
-text-align:center;
-margin:25px 0 10px;
-}
-
-.food-quality-link a{
-background:#294f98;
-color:white;
-padding:12px 20px;
-border-radius:6px;
-text-decoration:none;
-display:inline-block;
-font-weight:bold;
-}
-
-.food-quality-link a:hover{
-background:#1f3d78;
-}
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial, Helvetica, sans-serif;
-}
-
-body{
-background:#fff;
-}
-
-/* Quick Links */
-
-.quick-links{
-
-display:flex;
-justify-content:center;
-flex-wrap:wrap;
-gap:60px;
-
-padding:20px;
-
-}
-
-.item{
-
-text-align:center;
-
-}
-
-.item img{
-
-width:130px;
-height:130px;
-border-radius:50%;
-border:2px solid #5aa2df;
-padding:5px;
-object-fit:contain;
-transition:.4s;
-
-}
-
-.item img:hover{
-
-transform:scale(1.08);
-
-}
-
-.item a{
-
-display:block;
-margin-top:12px;
-font-size:28px;
-color:#2f67b2;
-text-decoration:underline;
-
-}
-
-
-/* Footer */
-
-footer{
-
-background:#162750;
-color:white;
-
+.footer{
+    background:#2d2d2d;
+    color:#fff;
+    padding:60px 80px;
 }
 
 .footer-container{
-
-display:flex;
-justify-content:space-around;
-flex-wrap:wrap;
-padding:40px 60px;
-
+    max-width:1300px;
+    margin:auto;
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:40px;
 }
 
-.footer-box{
-
-width:320px;
-margin-bottom:20px;
-
+.footer-column h3{
+    font-size:22px;
+    margin-bottom:20px;
+    color:#fff;
 }
 
-.footer-box h2{
-
-margin-bottom:20px;
-font-size:30px;
-text-align:center;
-
+.footer-column ul{
+    list-style:none;
 }
 
-.footer-box p{
-
-margin:15px 0;
-font-size:22px;
-
+.footer-column ul li{
+    margin-bottom:16px;
 }
 
-.footer-box i{
-
-margin-right:10px;
-
+.footer-column ul li a{
+    text-decoration:none;
+    color:#cfcfcf;
+    font-size:18px;
+    transition:.3s;
 }
 
-.footer-box ul{
-
-list-style:none;
-
+.footer-column ul li a:hover{
+    color:#00bfff;
 }
 
-.footer-box ul li{
-
-margin:18px 0;
-
+.live{
+    background:#444;
+    color:#fff;
+    font-size:12px;
+    padding:4px 8px;
+    border-radius:5px;
+    margin-left:8px;
 }
 
-.footer-box ul li a{
-
-color:white;
-text-decoration:none;
-font-size:22px;
-
+.new{
+    background:#ff4d4d;
+    color:#fff;
+    font-size:10px;
+    padding:2px 6px;
+    border-radius:4px;
+    margin-left:5px;
 }
 
-.footer-box ul li a:hover{
-
-text-decoration:underline;
-
+@media(max-width:1100px){
+    .footer-container{
+        grid-template-columns:repeat(3,1fr);
+    }
 }
 
-
-/* Bottom Footer */
-
-.bottom-footer{
-
-display:flex;
-justify-content:space-between;
-align-items:center;
-
-padding:15px 25px;
-
-border-top:1px solid rgba(255,255,255,.3);
-
-font-size:18px;
-
+@media(max-width:768px){
+    .footer-container{
+        grid-template-columns:repeat(2,1fr);
+    }
 }
 
-.bottom-footer a{
+@media(max-width:500px){
+    .footer{
+        padding:40px 20px;
+    }
 
-color:white;
-text-decoration:none;
-
+    .footer-container{
+        grid-template-columns:1fr;
+    }
 }
 
-.bottom-footer a:hover{
-
-text-decoration:underline;
-
+/* WhatsApp Button Styles */
+.whatsapp-button {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    text-decoration: none;
+    z-index: 999;
+    transition: all 0.3s ease;
 }
 
-
-/* Responsive */
-
-@media(max-width:992px){
-
-.footer-container{
-
-flex-direction:column;
-align-items:center;
-
+.whatsapp-button:hover {
+    background-color: #1ead4f;
+    transform: scale(1.1);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
 }
 
-.bottom-footer{
-
-flex-direction:column;
-text-align:center;
-gap:10px;
-
+.whatsapp-button-tooltip {
+    position: absolute;
+    right: 75px;
+    background-color: #25D366;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
 }
 
-.quick-links{
-
-gap:30px;
-
+.whatsapp-button:hover .whatsapp-button-tooltip {
+    opacity: 1;
+    visibility: visible;
 }
 
-.item img{
-
-width:100px;
-height:100px;
-
+.whatsapp-contact-section {
+    background: linear-gradient(135deg, #25D366 0%, #1ead4f 100%);
+    color: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-top: 20px;
+    text-align: center;
 }
 
-.item a{
-
-font-size:18px;
-
+.whatsapp-contact-section h4 {
+    margin-bottom: 10px;
+    font-size: 18px;
 }
 
+.whatsapp-contact-section p {
+    margin: 5px 0;
+    font-size: 16px;
 }
-</style>
 
+.whatsapp-contact-btn {
+    display: inline-block;
+    background-color: white;
+    color: #25D366;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-contact-btn:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+@media(max-width:600px){
+    .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        font-size: 24px;
+        bottom: 20px;
+        right: 20px;
+    }
+    
+    .whatsapp-button-tooltip {
+        display: none;
+    }
+}
+
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://www.shutterstock.com/image-vector/eagle-logo-fierce-vibrant-soaring-260nw-2494369867.jpg" alt="Logo" width="100" height="100">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li class="dropdown">
+                <a href="courses.html">Courses</a>
+                <ul class="dropdown-content">
+                    <li><a href="#">Data structures</a></li>
+                    <li><a href="#">Algorithms</a></li>
+                    <li><a href="#">Web development</a></li>
+                </ul>
+            </li>
+            <li><a href="Contact us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+    <marquee behavior="scroll" direction="left" scrollamount="10">
+        <p>Welcome to our website!some courses as to be available! grow your skills with us! knowledge is apowerful weapon</p>
+    
+    </marquee>
+    <div class="homebanner">
+        <img src="https://www.euroschoolindia.com/blogs/wp-content/uploads/2023/04/qualities-of-a-good-student.jpg" alt="Home Banner" >
+            <h1>Welcome to our website!  
+                  Build your skills with us!
+            </h1>
+            <p>We are a team of passionate educators and developers dedicated to providing high-quality online courses in various fields of technology. Our mission is to empower learners with the knowledge and skills they need to succeed in their careers. </p>
+            <button onclick="window.location.href='courses.html'">Explore Courses</button>
+    </div>
+    <h2 style="text-align: center;">Our Partners</h2>
+    <marquee partnership behavior="scroll" direction="right" scrollamount="10">
+        <div class="partnership">
+        
+        <div class="partners">
+            <img src="BIsdws_8-iit-ropar (1).webp" alt="Partner 1">
+            <img src="C6rKRY5L-anna-university-chennai.webp" alt="Partner 2">
+            <img src="BO405Vrs-iit-kanpur.webp" alt="Partner 3">
+            <img src="BCPcGBgM-naan-mudhalvan.webp" alt="Partner 4">
+            <img src="BWlI1m4l-nasscom.webp" alt="Partner 5">
+            <img src="CnnFx7sx-swayam-plus.webp" alt="Partner 6">
+            <img src="DVq3f3xP-autodesk.webp" alt="Partner 7">
+            <img src="9TNw1reF-google-for-education.webp" alt="Partner 8">
+            <img src="D1CT1oLd-iitm-pravartak.webp" alt="Partner 9">
+        </div>
+    </marquee>
+    
+
+    <section>
+        <div>
+            
+        <img src="DtJkssym-intel-aiml.webp" alt="Mission" width="400" height="450">
+        <h1>Artificial Intelligence & Machine Learning (Certified by Intel, IITM Pravartak)</h1>
+        <button onclick="window.location.href='courses.html'">Explore Courses</button>
+        <button onclick="window.location.href='contact.html'"> syllabus </button>
+        </div>  
+      
+    <div>
+        <img src="DWtn8o20-sde.webp" alt="Mission" width="400" height="450">
+        <h1>GEN Al Software
+Development Program
+(Certified by MongoDB,
+IITM Pravartak) </h1>
+        <button onclick="window.location.href='courses.html'">Explore Courses</button>
+        <button onclick="window.location.href='contact.html'"> syllabus </button>
+    </div>
+    <div>
+
+         <img src="Baq-GG32-data-science.webp" alt="Mission" width="400" height="450">
+         <h1>Full Stack Development
+Course with Al Tools</h1>
+         <button onclick="window.location.href='courses.html'">Explore Courses</button>
+        <button onclick="window.location.href='contact.html'"> syllabus </button>
+    </div>
+        <div>
+         <img src="ClcjHYEd-full-stack-development.webp" alt="Mission" width="400" height="450">
+         <h1>Master Data Science Course with IITM Pravartak Certification</h1>
+         <button onclick="window.location.href='courses.html'">Explore Courses</button>
+        <button onclick="window.location.href='contact.html'"> syllabus </button>
+    </div>
+    </section>
+    <div class="banner">
+        <img src="https://www.guvi.in/assets/DyvtxME7-desk-bg1.webp" alt="Home Banner" width="1600" height="400px">
+        <div class="banner-content">
+            <h2>Not sure which path to choose?</h2>
+            <p>Take our free Skill Assessment and discover the right program tailored for you.</p>
+            <button onclick="window.location.href='courses.html'">Explore Courses</button>
+            <h3>Hurry up! Don't miss the exclusive discount ₹7500 on the course.</h3>
+        </div>
+    </div>
+  <div class="profile">
+
+    <h2>Meet Our Expert Team</h2>
+
+    <div class="carousel-container">
+
+        <button class="carousel-btn" onclick="prevSlide()">❮</button>
+
+        <div class="carousel-wrapper">
+
+            <div class="carousel-track" id="carouselTrack">
+
+                <div class="team-member">
+                    <img src="Dix1qfQz-learner-8.webp" alt="">
+                    <h3>John Doe</h3>
+                    <p>Founder & CEO</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="DZGE7xFb-learner-10.webp" alt="">
+                    <h3>Jane Smith</h3>
+                    <p>Lead Developer</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="Db9Nr-9J-learner-4.webp" alt="">
+                    <h3>Emily Johnson</h3>
+                    <p>UI / UX Designer</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="p2.webp" alt="">
+                    <h3>Michael Brown</h3>
+                    <p>Marketing Specialist</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="p3.webp" alt="">
+                    <h3>Sarah Davis</h3>
+                    <p>Content Strategist</p>
+                </div>
+
+                <div class="team-member">
+                    <img src="p4.webp" alt="">
+                    <h3>David Wilson</h3>
+                    <p>Data Analyst</p>
+                </div>
+
+            </div>
+
+        </div>
+
+        <button class="carousel-btn" onclick="nextSlide()">❯</button>
+
+    </div>
+
+    <div class="dots" id="dots"></div>
+
+    <div style="text-align:center;">
+        <button class="view-btn">View More</button>
+    </div>
+
+</div>
+<script>
+
+const track = document.getElementById("carouselTrack");
+const cards = document.querySelectorAll(".team-member");
+const dotsContainer = document.getElementById("dots");
+
+let currentIndex = 0;
+const cardsToShow = 3;
+const totalSlides = cards.length - cardsToShow + 1;
+
+for (let i = 0; i < totalSlides; i++) {
+
+    const dot = document.createElement("span");
+    dot.classList.add("dot");
+
+    if (i === 0) {
+        dot.classList.add("active");
+    }
+
+    dot.addEventListener("click", () => {
+        currentIndex = i;
+        updateCarousel();
+    });
+
+    dotsContainer.appendChild(dot);
+}
+
+function updateCarousel() {
+
+    const cardWidth = cards[0].offsetWidth + 20;
+
+    track.style.transform =
+        `translateX(-${currentIndex * cardWidth}px)`;
+
+    document.querySelectorAll(".dot").forEach(dot => {
+        dot.classList.remove("active");
+    });
+
+    document.querySelectorAll(".dot")[currentIndex]
+        .classList.add("active");
+}
+
+function nextSlide() {
+
+    if (currentIndex < totalSlides - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+
+    updateCarousel();
+}
+
+function prevSlide() {
+
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalSlides - 1;
+    }
+
+    updateCarousel();
+}
+
+setInterval(nextSlide, 3000);
+
+</script>
+<div class="location-section">
+    <div class="location-map">
+        <h2 style="text-align: center;">Our Location</h2>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.882187091888!2d76.3039054748236!3d10.00716809287009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b7c8e5a5e6b9%3A0x8c8c8c8c8c8c8c8c!2sYour%20Location%20Name!5e0!3m2!1sen!2sin!4v1697040000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <p style="text-align: right;">LOCATION is located in the heart of the city.</p>
+    </div>
+
+    <div class="location-form">
+        <h3 style="text-align: center; margin-bottom: 15px;">Contact Us</h3>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age"><br><br>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"><br><br>
+            <input type="checkbox" id="subscribe" name="subscribe">
+            <label for="subscribe">Subscribe to newsletter</label><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password"><br><br>
+            <div class="button-row">
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </div>
+        </form>
+        
+        <div class="whatsapp-contact-section">
+            <h4>💬 Quick Enquiry via WhatsApp</h4>
+            <p>Get instant support and course information</p>
+            <p>Chat with us on WhatsApp</p>
+            <a href="https://wa.me/919876543210?text=Hi%20I%20would%20like%20to%20know%20more%20about%20your%20courses" class="whatsapp-contact-btn" target="_blank">Send Message on WhatsApp</a>
+        </div>
+    </div>
+</div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Footer Design</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Top Bar -->
-
-<div class="top-bar">
-
-<div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
-
-<div>
-<a href="#">தமிழ்</a>
-|
-<a href="#">A-</a>
-<a href="#">A</a>
-<a href="#">A+</a>
-</div>
-
-<div class="social-links">
-<a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer">📸 Instagram</a>
-<a href="https://www.facebook.com/" target="_blank" rel="noopener noreferrer">📘 Facebook</a>
-<a href="https://wa.me/" target="_blank" rel="noopener noreferrer">💬 WhatsApp</a>
-</div>
-
-</div>
-
-</div>
-
-<!-- Header -->
-
-<header class="header">
-
-<div class="container">
-
-<div class="row align-items-center">
-
-<div class="col-md-3 text-center">
-
-<img src="CM_Vijay_2026.png" class="profile">
-
-<h6>Thiru C. Joseph Vijay</h6>
-
-<p>Hon'ble Chief Minister</p>
-
-</div>
-
-<div class="col-md-6 text-center">
-
-<img src="AVIN.png" class="logo">
-
-<h2>TAMILNADU CO-OPERATIVE MILK PRODUCERS' FEDERATION LIMITED</h2>
-
-</div>
-
-<div class="col-md-3 text-center">
-
-<img src="Minister_Vijayalakshmi.jpg" class="profile">
-
-<h6>Tmt C. Vijayalakshmi</h6>
-
-<p>Minister for Milk & Dairy</p>
-
-</div>
-
-</div>
-
-</div>
-
-</header>
-
-<!-- Navbar -->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-
-<div class="container">
-
-<button class="navbar-toggler"
-type="button"
-data-bs-toggle="collapse"
-data-bs-target="#menu">
-
-<span class="navbar-toggler-icon"></span>
-
-</button>
-
-<div class="collapse navbar-collapse" id="menu">
-
-<ul class="navbar-nav mx-auto">
-
-<li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Federation</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Unions</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Milk</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Services</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Tenders</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Careers</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Gallery</a></li>
-
-<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
-
-</ul>
-
-</div>
-
-</div>
-
-</nav>
-
-<!-- News -->
-
-<div class="news">
-
-<span>Latest News</span>
-
-<marquee>
-
-Employee PF uploaded | Family Security Fund | Salem Aavin Market
-
-</marquee>
-
-</div>
-
-<!-- Slider -->
-
-<div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-
-<div class="carousel-inner">
-
-<div class="carousel-item active">
-
-<img src="https://aavin.tn.gov.in/documents/20142/621496/icecram2.jpg/cb22b351-6d53-0091-e332-68ab7c83d1c8?t=1767680270645" class="d-block w-100">
-
-</div>
-
-<div class="carousel-item">
-
-<img src="https://aavin.tn.gov.in/documents/20142/621496/milkshake.jpg/3ae1da3f-5618-f85f-8fd9-7a0a389f27d1?t=1767680383685" class="d-block w-100">
-
-</div>
-
-<div class="carousel-item">
-
-<img src="https://aavin.tn.gov.in/documents/20142/621496/cookies.jpg/63aa5274-eac8-ef99-6d5e-d8b50dd41a35?t=1767680479250" class="d-block w-100">
-
-</div>
-
-</div>
-
-<button class="carousel-control-prev"
-type="button"
-data-bs-target="#carouselExample"
-data-bs-slide="prev">
-
-<span class="carousel-control-prev-icon"></span>
-
-</button>
-
-<button class="carousel-control-next"
-type="button"
-data-bs-target="#carouselExample"
-data-bs-slide="next">
-
-<span class="carousel-control-next-icon"></span>
-
-</button>
-
-</div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<section class="products">
-
-<h2>REVEAL OUR PRODUCTS</h2>
-
-<div class="product-grid">
-
-<div class="card">
-<a href="product-details.html" style="text-decoration:none; color:inherit; display:block;">
-<img src="https://aavin.tn.gov.in/documents/20142/41552/Delite-milk_Home-Page_.jpg/5b60d82e-fec7-41c6-914a-b081c1236dd6?t=1701950648653" alt="Aavin Delite">
-<h3>Aavin Delite</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="milk-peda-details.html" style="text-decoration:none; color:inherit; display:block;">
-<img src="https://aavin.tn.gov.in/documents/20142/283405/Milk-Peda.jpg/ddff460b-da99-7ee5-9239-2e56446a849e?t=1702383043084" alt="Milk Peda">
-<h3>Milk Peda</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="premium-curd-details.html" style="text-decoration:none; color:inherit; display:block;">
-<img src="https://aavin.tn.gov.in/documents/20142/283405/Curd.jpg/c502dd9d-bc67-5178-9d78-950a0e2f714b?t=1702031283461" alt="Premium Curd">
-<h3>Premium Curd</h3>
-</a>
-</div>
-
-<div class="card">
-<a href="mysorepa-details.html" style="text-decoration:none; color:inherit; display:block;">
-<img src="https://aavin.tn.gov.in/documents/20142/283405/Mysorepa.jpg/cde8753d-f6b6-4a89-237d-a3c9d4abdfb1?t=1702116232059" alt="Mysorepa">
-<h3>Mysorepa</h3>
-</a>
-</div>
-
-<div class="card">
-    <a href="ball-ice-cream-details.html" style="text-decoration:none; color:inherit; display:block;">
-        <img src="https://aavin.tn.gov.in/documents/20142/283405/Ball_Website-Images_.jpg/da160cd8-b713-9886-cf93-ac82f4aade62?t=1694845024726" alt="Ball Ice Cream">
-        <h3>Ball Ice Cream</h3>
-    </a>
-</div>
-
-<div class="card">
-    <a href="milk-cake-details.html" style="text-decoration:none; color:inherit; display:block;">
-        <img src="https://aavin.tn.gov.in/documents/20142/283405/Milk-Cake.jpg/332e44ef-7d02-c8e3-c4a1-e2dde6160959?t=1702031235773" alt="Milk Cake">
-        <h3>Milk Cake</h3>
-    </a>
-</div>
-
-<div class="card">
-    <a href="butter-milk-details.html" style="text-decoration:none; color:inherit; display:block;">
-        <img src="https://aavin.tn.gov.in/documents/20142/283405/Butter-Milk-+%281%29.jpg/d88a4363-d5f0-3cad-83e1-2e7bf23c4c72?t=1702097897082" alt="Butter Milk">
-        <h3>Butter Milk</h3>
-    </a>
-</div>
-
-<div class="card">
-    <a href="bar-ice-cream-details.html" style="text-decoration:none; color:inherit; display:block;">
-        <img src="https://aavin.tn.gov.in/documents/20142/283405/Bar-Ice-Cream.jpg/8b31e3b6-01e9-acbf-7e59-6922a4e22726?t=1702116191528" alt="Bar Ice Cream">
-        <h3>Bar Ice Cream</h3>
-    </a>
-</div>
-
-<div class="card">
-    <a href="chocolate-details.html" style="text-decoration:none; color:inherit; display:block;">
-        <img src="https://aavin.tn.gov.in/documents/20142/283405/Choclate.jpg/ae459155-4688-ad94-41a3-c17a8ffdfb70?t=1702116248779" alt="Chocolate">
-        <h3>Chocolate</h3>
-    </a>
-</div>
-
-<div class="card">
-    <a href="khova-details.html" style="text-decoration:none; color:inherit; display:block;">
-        <img src="https://aavin.tn.gov.in/documents/20142/283405/Khova.jpg/47524294-94a3-ff9d-0a5e-dd958417a07e?t=1702097427760" alt="Khova">
-        <h3>Khova</h3>
-    </a>
-</div>
-
-<div class="card">
-    <a href="yoghurt-drink-details.html" style="text-decoration:none; color:inherit; display:block;">
-        <img src="https://aavin.tn.gov.in/documents/20142/283405/Strawberry.jpg/19c4e52b-8253-1f44-11c2-c22533cca8a6?t=1702097739065" alt="Yoghurt Drink">
-        <h3>Yoghurt Drink</h3>
-    </a>
-</div>
-
-<div class="card">
-    <a href="paneer-details.html" style="text-decoration:none; color:inherit; display:block;">
-        <img src="https://aavin.tn.gov.in/documents/20142/283405/Paneer.jpg/7956a938-3a58-67de-5629-512606c5cfc1?t=1702382998796" alt="Paneer">
-        <h3>Paneer</h3>
-    </a>
-</div>
-
-</div>
-
-<div class="food-quality-link">
-<a href="https://www.fssai.gov.in/" target="_blank" rel="noopener noreferrer">Food Quality Available</a>
-</div>
-
-</section>
-<!-- Quick Links -->
-
-<section class="quick-links">
-
-<div class="item">
-<img src="https://aavin.tn.gov.in/documents/20142/282456/milk.jpg/6a5b98dd-317a-f196-c4e1-e1c1ba1ae971?t=1720609138163">
-<a href="#">Know Your Milk</a>
-</div>
-
-<div class="item">
-<img src="https://aavin.tn.gov.in/documents/20142/0/Milk+Card+Icon.png/4db74c78-48e5-5cbf-eff4-e561929e4193?t=1671019407098">
-<a href="#">Online Milk Card</a>
-</div>
-
-<div class="item">
-<img src="https://aavin.tn.gov.in/documents/20142/0/Parlour+Icon.png/f9f80bb6-02e1-a2f9-04f7-935a013461f8?t=1671018916532">
-<a href="#">Our Parlours</a>
-</div>
-
-<div class="item">
-<img src="https://aavin.tn.gov.in/documents/20142/0/Zonal+Office+Icon+%282%29.png/45eb255e-6fea-dc90-52bc-ba2963a98490?t=1671018641575">
-<a href="#">Zone Address</a>
-</div>
-
-<div class="item">
-<img src="https://aavin.tn.gov.in/documents/20142/282456/pro_Round_Icon.png/">
-<a href="#">Product Price List</a>
-</div>
-
-</section>
-
-
-<!-- Footer -->
-
-<footer>
-
-<div class="footer-container">
-
-<div class="footer-box">
-
-<h2>ADDRESS</h2>
-
-<p>TCMPF Ltd., Aavin Illam,</p>
-
-<p>3A, Pasumpon Muthuramalinganar Salai,</p>
-
-<p>Nandanam, Chennai - 600 035</p>
-
-</div>
-
-
-<div class="footer-box">
-
-<h2>CONTACT US</h2>
-
-<p><i class="fa-solid fa-phone"></i> 1800 425 3300</p>
-
-<p><i class="fa-solid fa-envelope"></i>
-aavincomplaints@aavin.tn.gov.in
-</p>
-
-</div>
-
-
-<div class="footer-box">
-
-<h2>IMPORTANT LINKS</h2>
-
-<ul>
-
-<li><a href="#">Terms and Conditions</a></li>
-
-<li><a href="#">Privacy Policy</a></li>
-
-<li><a href="#">Hyper Linking Policy</a></li>
-
-<li><a href="#">Copyright Policy</a></li>
-
-<li><a href="#">Disclaimer</a></li>
-
-</ul>
-
-</div>
-
-</div>
-
-
-<div class="bottom-footer">
-
-<div>
-
-<a href="#">FAQ</a> |
-
-<a href="#">News</a> |
-
-<a href="#">Contact Us</a> |
-
-Content Managed & Owned by TCMPF
-
-</div>
-
-<div>
-
-Powered By CMS Computers Ltd.
-
-</div>
-
-</div>
-
+<footer class="footer">
+    <div class="footer-container">
+
+        <div class="footer-column">
+            <h3>ZEN CLASS <span class="live">🔴 LIVE CLASS</span></h3>
+            <ul>
+                <li><a href="#">Full Stack Development</a></li>
+                <li><a href="#">Data Science</a></li>
+                <li><a href="#">Software Development</a></li>
+                <li><a href="#">Intel AIML</a></li>
+                <li><a href="#">UI/UX</a></li>
+                <li><a href="#">DevOps</a></li>
+                <li><a href="#">Business Analytics with Digital Marketing</a></li>
+                <li><a href="#">All Programs</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Popular Courses</h3>
+            <ul>
+                <li><a href="#">Python – IIT-M Pravartak Certified</a></li>
+                <li><a href="#">Java</a></li>
+                <li><a href="#">Mobile Hacking</a></li>
+                <li><a href="#">C Programming</a></li>
+                <li><a href="#">AWS</a></li>
+                <li><a href="#">Angular</a></li>
+                <li><a href="#">Dark Web</a></li>
+                <li><a href="#">All Courses</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Self-Paced Courses</h3>
+            <ul>
+                <li><a href="#">Premium Pass</a></li>
+                <li><a href="#">Paid Courses</a></li>
+                <li><a href="#">Free Courses</a></li>
+                <li><a href="#">Combos</a></li>
+            </ul>
+
+            <h3>Practice Platforms</h3>
+            <ul>
+                <li><a href="#">CodeKata</a></li>
+                <li><a href="#">WebKata</a></li>
+                <li><a href="#">SQLKata</a></li>
+                <li><a href="#">FixTheCode</a></li>
+                <li><a href="#">IDE</a></li>
+            </ul>
+
+            <h3>Community</h3>
+            <ul>
+                <li><a href="#">Campus Ambassador</a></li>
+                <li><a href="#">Industrial Visit</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Products</h3>
+            <ul>
+                <li><a href="#">HackerKID</a></li>
+                <li><a href="#">Placement Preparation</a></li>
+                <li><a href="#">HCL GUVI for Corporates</a></li>
+            </ul>
+
+            <h3>Resources</h3>
+            <ul>
+                <li><a href="#">Success Stories</a></li>
+                <li><a href="#">Learn Hub</a></li>
+                <li><a href="#">Free Resources</a></li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">Web Stories</a></li>
+                <li><a href="#">Rewards</a></li>
+                <li><a href="#">Refer a Friend</a></li>
+                <li><a href="#">Become an Affiliate</a></li>
+                <li><a href="#">Resume Builder <span class="new">New</span></a></li>
+            </ul>
+        </div>
+
+        <div class="footer-column">
+            <h3>Company</h3>
+            <ul>
+                <li><a href="#">Refund Policy</a></li>
+                <li><a href="#">FAQs</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </div>
+
+    </div>
 </footer>
 
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/9363144915?text=Hi%20I%20would%20like%20to%20know%20more%20about%20your%20courses" class="whatsapp-button" target="_blank" title="Chat with us on WhatsApp">
+    <span class="whatsapp-button-tooltip">Chat with us!</span>
+    💬
+</a>
+
+</body>
 </body>
 </html>

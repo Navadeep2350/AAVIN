@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #eef5ff;
+            color: #1f2740;
+        }
+        nav {
+            background-color: lightblue;
+            width: 100%;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo img {
+            display: block;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+        }
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            gap: 25px;
+            align-items: center;
+            font-size: 16px;
+        }
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 12px;
+            border-radius: 8px;
+        }
+        .nav-links a:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+        .header {
+            max-width: 1200px;
+            margin: 40px auto 20px;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .header h1 {
+            font-size: 40px;
+            margin-bottom: 14px;
+            color: #1d1d5c;
+        }
+        .header p {
+            font-size: 18px;
+            color: #4d5568;
+            max-width: 760px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        .contact-container {
+            max-width: 1200px;
+            margin: 40px auto 60px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 30px;
+        }
+        .contact-info,
+        .contact-form {
+            background: #fff;
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 20px 45px rgba(0,0,0,0.08);
+        }
+        .contact-info h2,
+        .contact-form h2 {
+            margin-bottom: 18px;
+            color: #1d1d5c;
+        }
+        .contact-info p {
+            color: #4d5568;
+            line-height: 1.85;
+            margin-bottom: 24px;
+        }
+        .info-list {
+            list-style: none;
+            display: grid;
+            gap: 16px;
+        }
+        .info-list li {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            color: #2b2b3b;
+        }
+        .info-list span {
+            font-weight: 700;
+            color: #2d3a6b;
+        }
+        .contact-form form {
+            display: grid;
+            gap: 18px;
+        }
+        .contact-form label {
+            font-weight: 600;
+            color: #2b2b3b;
+        }
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 14px 16px;
+            border: 1px solid #ccd5e5;
+            border-radius: 10px;
+            font-size: 16px;
+            color: #1f2740;
+            background: #f8fbff;
+        }
+        .contact-form textarea {
+            min-height: 170px;
+            resize: vertical;
+        }
+        .contact-form button {
+            width: fit-content;
+            padding: 14px 28px;
+            background: indigo;
+            color: #fff;
+            font-size: 16px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background: #2f1791;
+        }
+        .map {
+            width: 100%;
+            height: 340px;
+            margin-top: 24px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 18px 35px rgba(0,0,0,0.08);
+        }
+        .footer {
+            background: #2d2d2d;
+            color: #fff;
+            padding: 28px 20px;
+        }
+        .footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+            color: #cfcfcf;
+        }
+        .footer-column ul li a {
+            color: #cfcfcf;
+            text-decoration: none;
+        }
+        .footer-column ul li a:hover {
+            color: #00bfff;
+        }
+        @media (max-width: 960px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://www.shutterstock.com/image-vector/eagle-logo-fierce-vibrant-soaring-260nw-2494369867.jpg" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="course.html">Courses</a></li>
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="header">
+        <h1>Contact Us</h1>
+        <p>Have questions or want to learn more about our courses? Send us a message and our team will reach out to help you get started.</p>
+    </section>
+
+    <section class="contact-container">
+        <div class="contact-info">
+            <h2>Get in Touch</h2>
+            <p>We’re here to help with admissions, course guidance, and student support. Reach out and we’ll connect you with the right advisor.</p>
+            <ul class="info-list">
+                <li><span>Phone:</span> +91 98765 43210</li>
+                <li><span>Email:</span> support@website.com</li>
+                <li><span>Address:</span> Kerala, India</li>
+                <li><span>Office Hours:</span> Mon - Fri, 9:00 AM - 6:00 PM</li>
+            </ul>
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.882187091888!2d76.3039054748236!3d10.00716809287009!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba7b7c8e5a5e6b9%3A0x8c8c8c8c8c8c8c8c!2sYour%20Location%20Name!5e0!3m2!1sen!2sin!4v1697040000000" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your name">
+
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your email">
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject">
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Write your message here..."></textarea>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Website</h3>
+                <p>We support learners through every stage of their tech journey with courses, mentorship, and career-focused training.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="course.html">Courses</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: support@website.com</li>
+                    <li>Phone: +91 98765 43210</li>
+                    <li>Kerala, India</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

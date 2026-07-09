@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Web Development</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #f4f8ff;
+            color: #222;
+        }
+        nav {
+            background-color: lightblue;
+            width: 100%;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo img {
+            display: block;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+        }
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            gap: 25px;
+            align-items: center;
+            font-size: 16px;
+        }
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 12px;
+            border-radius: 8px;
+        }
+        .nav-links a:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+        .page-header {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 42px;
+            color: #1d1d5c;
+            margin-bottom: 12px;
+        }
+        .page-header p {
+            font-size: 18px;
+            color: #555;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .course-grid {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(260px, 1fr));
+            gap: 24px;
+        }
+        .course-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+        }
+        .course-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        .course-card-content {
+            padding: 24px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .course-card-content h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #1d1d5c;
+        }
+        .course-card-content p {
+            color: #555;
+            margin-bottom: 18px;
+            line-height: 1.7;
+        }
+        .course-details {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+            color: #707070;
+            font-size: 14px;
+        }
+        .course-details span {
+            background: #eef2ff;
+            color: #3f51b5;
+            padding: 8px 12px;
+            border-radius: 999px;
+        }
+        .course-card-content a {
+            margin-top: auto;
+            display: inline-block;
+            padding: 12px 22px;
+            background: indigo;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .course-card-content a:hover {
+            background: #2f1791;
+        }
+        .highlight {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 24px 20px;
+            background: #e8f1ff;
+            border-left: 4px solid indigo;
+            border-radius: 18px;
+        }
+        .highlight h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #1d1d5c;
+        }
+        .highlight p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.8;
+        }
+        .footer {
+            margin-top: 60px;
+            background: #2d2d2d;
+            color: #fff;
+            padding: 30px 20px;
+        }
+        .footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+            color: #cfcfcf;
+        }
+        .footer-column ul li a {
+            color: #cfcfcf;
+            text-decoration: none;
+        }
+        .footer-column ul li a:hover {
+            color: #00bfff;
+        }
+        @media (max-width: 960px) {
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://www.shutterstock.com/image-vector/eagle-logo-fierce-vibrant-soaring-260nw-2494369867.jpg" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="course.html">Courses</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="page-header">
+        <h1>Our Courses</h1>
+        <p>Explore our curated programs designed for beginners and experienced learners, covering AI, web development, full stack, and career-ready skills.</p>
+    </section>
+
+    <section class="course-grid">
+        <article class="course-card">
+            <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="AI & ML Course">
+            <div class="course-card-content">
+                <h2>AI & ML Certification</h2>
+                <div class="course-details">
+                    <span>12 Weeks</span>
+                    <span>Beginner to Advanced</span>
+                </div>
+                <p>Learn practical machine learning and artificial intelligence skills with real-world projects and certification from Intel and IITM Pravartak.</p>
+                <a href="#">View Course</a>
+            </div>
+        </article>
+
+        <article class="course-card">
+            <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Software Development Program">
+            <div class="course-card-content">
+                <h2>Gen AI Software Dev</h2>
+                <div class="course-details">
+                    <span>10 Weeks</span>
+                    <span>Industry Certified</span>
+                </div>
+                <p>Build software development skills with AI-powered tools, guidance from experts, and certification support from MongoDB and IITM Pravartak.</p>
+                <a href="#">View Course</a>
+            </div>
+        </article>
+
+        <article class="course-card">
+            <img src="https://images.pexels.com/photos/1181314/pexels-photo-1181314.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Full Stack Development Course">
+            <div class="course-card-content">
+                <h2>Full Stack with AI Tools</h2>
+                <div class="course-details">
+                    <span>14 Weeks</span>
+                    <span>Project-Based</span>
+                </div>
+                <p>Become a full stack developer with modern web technologies and AI-enhanced workflows for building responsive applications.</p>
+                <a href="#">View Course</a>
+            </div>
+        </article>
+
+        <article class="course-card">
+            <img src="https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Data Science Course">
+            <div class="course-card-content">
+                <h2>Data Science Mastery</h2>
+                <div class="course-details">
+                    <span>16 Weeks</span>
+                    <span>Tool-Based</span>
+                </div>
+                <p>Master data science techniques with hands-on analytics, visualization, and certification pathways in partnership with IITM Pravartak.</p>
+                <a href="#">View Course</a>
+            </div>
+        </article>
+
+        <article class="course-card">
+            <img src="https://images.pexels.com/photos/1181458/pexels-photo-1181458.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="UI/UX Design Course">
+            <div class="course-card-content">
+                <h2>UI/UX Design</h2>
+                <div class="course-details">
+                    <span>8 Weeks</span>
+                    <span>Creative Portfolio</span>
+                </div>
+                <p>Learn user interface and experience design principles, prototyping, and usability testing to build beautiful digital products.</p>
+                <a href="#">View Course</a>
+            </div>
+        </article>
+
+        <article class="course-card">
+            <img src="https://images.pexels.com/photos/1181609/pexels-photo-1181609.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="DevOps Course">
+            <div class="course-card-content">
+                <h2>DevOps & Cloud</h2>
+                <div class="course-details">
+                    <span>10 Weeks</span>
+                    <span>Hands-On Labs</span>
+                </div>
+                <p>Get practical DevOps experience with CI/CD, containerization, cloud deployment, and infrastructure automation workflows.</p>
+                <a href="#">View Course</a>
+            </div>
+        </article>
+    </section>
+
+    <section class="highlight">
+        <h3>Why Choose Website Courses?</h3>
+        <p>Our courses combine expert instruction, practical projects, and supportive mentorship so learners can build confidence, finish strong, and prepare for meaningful careers in tech.</p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Website </h3>
+                <p>We offer learner-first programs with certification support, community guidance, and a career-focused approach.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: support@praveen.com</li>
+                    <li>Phone: +91 98765 43210</li>
+                    <li>Location: Kerala, India</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

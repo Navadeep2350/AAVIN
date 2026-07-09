@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            background: #f4f7fb;
+            color: #222;
+        }
+        nav {
+            background-color: lightblue;
+            width: 100%;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo img {
+            display: block;
+            border-radius: 50%;
+            width: 70px;
+            height: 70px;
+        }
+        .nav-links {
+            display: flex;
+            list-style-type: none;
+            gap: 25px;
+            align-items: center;
+            font-size: 16px;
+        }
+        .nav-links a {
+            color: black;
+            text-decoration: none;
+            padding: 10px 12px;
+            border-radius: 8px;
+        }
+        .nav-links a:hover {
+            background-color: rgba(0, 0, 0, 0.08);
+        }
+        .page-header {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            text-align: center;
+        }
+        .page-header h1 {
+            font-size: 42px;
+            color: #1d1d5c;
+            margin-bottom: 14px;
+        }
+        .page-header p {
+            font-size: 18px;
+            color: #555;
+            max-width: 760px;
+            margin: 0 auto;
+        }
+        .blog-list {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 0 20px;
+            display: grid;
+            gap: 24px;
+        }
+        .blog-card {
+            background: #fff;
+            border-radius: 18px;
+            overflow: hidden;
+            box-shadow: 0 14px 30px rgba(0,0,0,0.08);
+        }
+        .blog-card img {
+            width: 100%;
+            display: block;
+            height: 320px;
+            object-fit: cover;
+        }
+        .blog-card-content {
+            padding: 24px;
+        }
+        .blog-card-content h2 {
+            font-size: 28px;
+            margin-bottom: 12px;
+            color: #1d1d5c;
+        }
+        .blog-meta {
+            display: flex;
+            gap: 16px;
+            color: #707070;
+            font-size: 14px;
+            margin-bottom: 14px;
+        }
+        .blog-card-content p {
+            color: #555;
+            margin-bottom: 20px;
+            line-height: 1.75;
+        }
+        .blog-card-content a {
+            display: inline-block;
+            padding: 12px 22px;
+            background: indigo;
+            color: #fff;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+        .blog-card-content a:hover {
+            background: #2f1791;
+        }
+        .featured-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #eef3ff;
+            border-left: 4px solid indigo;
+            border-radius: 18px;
+        }
+        .featured-section h3 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: #1d1d5c;
+        }
+        .featured-section p {
+            font-size: 16px;
+            color: #444;
+            line-height: 1.8;
+        }
+        .footer {
+            margin-top: 60px;
+            background: #2d2d2d;
+            color: #fff;
+            padding: 30px 20px;
+        }
+        .footer .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        .footer-column h3 {
+            font-size: 20px;
+            margin-bottom: 16px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+        }
+        .footer-column ul li {
+            margin-bottom: 10px;
+            color: #cfcfcf;
+        }
+        .footer-column ul li a {
+            color: #cfcfcf;
+            text-decoration: none;
+        }
+        .footer-column ul li a:hover {
+            color: #00bfff;
+        }
+        @media (max-width: 960px) {
+            .navbar, .featured-section, .footer .footer-container {
+                flex-direction: column;
+            }
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .blog-card img {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://www.shutterstock.com/image-vector/eagle-logo-fierce-vibrant-soaring-260nw-2494369867.jpg" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <section class="page-header">
+        <h1>Latest from Our Blog</h1>
+        <p>Stay updated with technology insights, course announcements, learning tips, and career guidance from  Praveen.</p>
+    </section>
+
+    <section class="blog-list">
+        <article class="blog-card">
+            <img src="https://images.pexels.com/photos/1181671/pexels-photo-1181671.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="AI course blog">
+            <div class="blog-card-content">
+                <div class="blog-meta">
+                    <span>April 24, 2026</span>
+                    <span>AI &amp; ML</span>
+                </div>
+                <h2>How AI is Transforming Learning for Developers</h2>
+                <p>Discover how artificial intelligence is reshaping course delivery, improving project feedback, and speeding skill development for learners.</p>
+                <a href="#">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <img src="https://images.pexels.com/photos/1181676/pexels-photo-1181676.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Web development blog">
+            <div class="blog-card-content">
+                <div class="blog-meta">
+                    <span>March 18, 2026</span>
+                    <span>Web Development</span>
+                </div>
+                <h2>Top 5 Web Development Trends to Learn in 2026</h2>
+                <p>From responsive design to modern JavaScript frameworks, learn which skills matter most for web developers this year.</p>
+                <a href="#">Read More</a>
+            </div>
+        </article>
+
+        <article class="blog-card">
+            <img src="https://images.pexels.com/photos/1181314/pexels-photo-1181314.jpeg?auto=compress&cs=tinysrgb&w=1200" alt="Career tips blog">
+            <div class="blog-card-content">
+                <div class="blog-meta">
+                    <span>February 5, 2026</span>
+                    <span>Career Guidance</span>
+                </div>
+                <h2>Building a Strong Portfolio for Tech Interviews</h2>
+                <p>Learn how to showcase your projects, write a standout resume, and land better internship and job opportunities.</p>
+                <a href="#">Read More</a>
+            </div>
+        </article>
+    </section>
+
+    <section class="featured-section">
+        <h3>Featured Topic: Skill Growth in the Digital Era</h3>
+        <p>At Praveen, we believe learning is a continuous journey. Our blogs bring practical advice, course updates, and study strategies to help you stay competitive in technology and career development.</p>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-column">
+                <h3>About Praveen </h3>
+                <p>We help learners develop skills through guided online courses, expert mentorship, and community support.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="Contact us.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul>
+                    <li>Email: support@praveen.com</li>
+                    <li>Phone: +91 98765 43210</li>
+                    <li>Location: Kerala, India</li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
